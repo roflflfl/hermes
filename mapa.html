@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Page</title>
+    <style>
+        button {
+            display: none; /* Hide button by default */
+        }
+
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            button {
+                display: block; /* Show button */
+                position: fixed;
+                bottom: 20px; /* Adjust the distance from the bottom */
+                right: 20px; /* Adjust the distance from the right */
+                padding: 10px 20px; /* Add padding for better visibility */
+                background-color: #007bff; /* Button background color */
+                color: white; /* Text color */
+                border: none; /* Remove button border */
+                border-radius: 5px; /* Add border radius */
+                cursor: pointer; /* Add cursor pointer */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Дорожня мапа</h2>
+                <li>invite-only TO public</li>
+                <li>limited financial incentive TO  sustainable mutual aid fund</li>
+                <li>digital TO physical</li>
+
+    <a href="html.html">Повернутись</a> <!-- Responsive hyperlink -->
+
+    <script>
+        // You can remove this script if not using button
+        function goBack() {
+            window.location.href = "html.html";
+        }
+    </script>
+</body>
+</html>
