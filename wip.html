@@ -25,7 +25,7 @@
         let blur;
 
         function setup() {
-            createCanvas(windowWidth, windowHeight, WEBGL);
+            createCanvas(windowWidth, windowHeight, WEBGL); // Set rendering mode to WEBGL
             layer = createGraphics(windowWidth, windowHeight);
             blur = createShader(vert, frag);
             noStroke();
@@ -34,17 +34,17 @@
         function draw() {
             // Draw a scene
             layer.background(255);
-            layer.directionalLight(255, 255, 255, -1, 1, -1);
-            layer.ambientMaterial(255, 0, 0);
-            layer.fill(255, 255, 100);
-            layer.specularMaterial(255);
-            layer.shininess(150);
-
-            layer.rotateY(millis() * 0.001);
+            ambientLight(100); // Ambient light only works in WEBGL mode
+            directionalLight(255, 255, 255, -1, 1, -1);
+            ambientMaterial(255, 0, 0);
+            fill(255, 255, 100);
+            specularMaterial(255);
+            shininess(150);
+          
             for (let i = 0; i < 5; i++) {
                 layer.push();
                 layer.translate((i - 2) * 100, 0, 0);
-                layer.sphere();
+                drawSphere(layer); // Call custom drawSphere function instead of sphere()
                 layer.pop();
             }
 
@@ -58,6 +58,12 @@
         function windowResized() {
             resizeCanvas(windowWidth, windowHeight);
             layer = createGraphics(windowWidth, windowHeight);
+        }
+
+        function drawSphere(graphics) {
+            // Custom function to draw sphere
+            graphics.sphereDetail(20);
+            graphics.ellipsoid(50, 50, 50);
         }
 
         let vert = `
@@ -120,26 +126,5 @@
             gl_FragColor = color;
         }`;
     </script>
-
-    <header>
-        <section>
-            <ul>
-                <a href="#main">?</a> це лейбл авторів, майструвальників та організаторів.</li>
-                <a href="">?.ua</a> це інтерфейс для публікацій.</li>
-                <a href="#discord">?+discord</a> це простір для зустрічей.</li>
-                <a href="#telegram">?+telegram</a> це майданчик для дописувачів та ради.</li>
-            </ul>
-        </section>
-    </header>
-
-    <section id="dopysuvachi">
-        <ul>
-            <li><a href="mapa.html">Дорожня мапа</a></li>
-            <li><a href="home.html">Групові Принципи</a></li>
-        </ul>
-    </section>
-
-    <footer>
-    </footer>
 </body>
 </html>
