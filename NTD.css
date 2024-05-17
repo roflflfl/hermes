@@ -1,0 +1,100 @@
+/* NTD.css */
+
+body {
+    margin: 10px;
+    color: white;
+}
+
+#text-input {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Adjusted width to 90% */
+    padding: 2vw; /* Adjusted padding using viewport width unit */
+    background-color: white;
+    font-size: 5vw; /* Adjusted font size using viewport width unit */
+    color: black;
+    z-index: 2;
+}
+
+/* Tab styles */
+.tabs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f2; /* Background color for the tab container */
+    z-index: 1; /* Ensure the tab container is above other content */
+}
+
+.tab-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    overflow-x: auto; /* Add horizontal scrolling if necessary */
+    scrollbar-width: thin; /* Set scrollbar width to thin */
+    scrollbar-color: transparent transparent red; /* Set scrollbar color */
+}
+
+/* Hide scrollbar arrows */
+.tab-links::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.tab-links::-webkit-scrollbar-track {
+    background: #f2f2f2; /* Gray background color */
+}
+
+/* Dot appearance for scrollbar */
+.tab-links::-webkit-scrollbar-thumb {
+    background: red; /* Red dot */
+    border-radius: 10px; /* Round border radius */
+}
+
+.tab-links li {
+    margin: 0;
+    flex: 1; /* Flex grow to fill the container */
+}
+
+.tab-links a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: saddlebrown;
+    color: #333;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 5px 10px 0 0; /* Rounded corners to look like browser tabs */
+    text-align: center;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.tab-links a:hover,
+.tab-links .active a {
+    background: #ddd;
+    color: #000;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Ensure tabs resize properly */
+.tab-links a {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/* NTD.css */
+
+#about {
+    padding: 10px;
+    position: fixed;
+    bottom: 20px; /* Sticky to the bottom with 20px padding */
+    left: 12%;
+    transform: translateX(-10%);
+    background-color: yellow; /* Yellow background color */
+    color: black; /* Black text color */
+    z-index: 2; /* Ensure the about box is above other content */
+}
